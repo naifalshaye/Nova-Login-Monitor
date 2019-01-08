@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
  Route::get('/slack', function (Request $request) {
-     if (!$request->session()->get('in')) {
+     if (!session('in')) {
          define('SLACK_WEBHOOK', env('SLACK_HOCK'));
          $message = array('payload' => json_encode(array('text' => Auth::user()->name.' | '.Auth::user()->email.': Signed in')));
          // Use curl to send your message
@@ -27,6 +27,6 @@ use Illuminate\Support\Facades\Route;
          curl_setopt($c, CURLOPT_POSTFIELDS, $message);
          curl_exec($c);
          curl_close($c);
-         $request->session()->put('in', 1);
+         session(['in' => 1]);
      }
  });
