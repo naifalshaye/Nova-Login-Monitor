@@ -5,8 +5,7 @@ export default {
         Nova.request()
             .get('/nova-vendor/nova-login-monitor/slack', {})
             .then(response => {
-        })
-        .catch(response => {
+        }).catch(response => {
         });
     }
 }

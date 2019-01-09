@@ -11,7 +11,7 @@ class NovaLoginMonitor extends Card
      *
      * @var string
      */
-    public $width = '1';
+    public $width = '1/3';
 
     /**
      * Get the component name for the element.

@@ -2,6 +2,7 @@
 
 namespace Naif\NovaLoginMonitor;
 
+use Illuminate\Support\Facades\Config;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,12 @@ class CardServiceProvider extends ServiceProvider
         $this->app->booted(function () {
             $this->routes();
         });
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/nova-login-monitor.php' => base_path('config/nova-login-monitor.php'),
+            ], 'config');
+        }
 
         Nova::serving(function (ServingNova $event) {
             Nova::script('nova-login-monitor', __DIR__.'/../dist/js/card.js');
@@ -50,6 +57,6 @@ class CardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/nova-login-monitor.php', 'nova-login-monitor');
     }
 }

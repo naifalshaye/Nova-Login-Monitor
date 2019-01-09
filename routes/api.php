@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
  Route::get('/slack', function (Request $request) {
      if (!session('in')) {
-         define('SLACK_WEBHOOK', env('SLACK_HOCK'));
+         define('SLACK_WEBHOOK', Config::get('nova-login-monitor.slack_hook'));
          $message = array('payload' => json_encode(array('text' => Auth::user()->name.' | '.Auth::user()->email.': Signed in')));
          // Use curl to send your message
          $c = curl_init(SLACK_WEBHOOK);
