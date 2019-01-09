@@ -11,7 +11,7 @@ class NovaLoginMonitor extends Card
      *
      * @var string
      */
-    public $width = '1/3';
+    public $width = '1';
 
     /**
      * Get the component name for the element.
@@ -22,13 +22,4 @@ class NovaLoginMonitor extends Card
     {
         return 'nova-login-monitor';
     }
-
-    public function power($power = 'On')
-    {
-        $this->withMeta([
-            'power' => $power
-        ]);
-        return $this;
-    }
-
 }
