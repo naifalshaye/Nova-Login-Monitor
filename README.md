@@ -33,7 +33,6 @@ Add the below to app/Providers/NovaServiceProvider.php
 new NovaLoginMonitor()
 ```
 
-
 ## Support:
 naif@naif.io
 
