@@ -27,11 +27,16 @@ SLACK_HOOK=https://hooks.slack.com/services/######//######//###########
 Create your app and generate Webhook from https://api.slack.com/apps
 
 ## Usage:
-Add the below to app/Providers/NovaServiceProvider.php
+Add the below to app/Providers/NovaServiceProvider.php in "cards" function
 
 ```php
 new NovaLoginMonitor()
 ```
+
+## Screenshots
+
+<img src="https://github.com/naifalshaye/Nova-Login-Monitor/blob/master/screenshots/web.png" width="430">
+<img src="https://github.com/naifalshaye/Nova-Login-Monitor/blob/master/screenshots/iphone.png" width="330">
 
 ## Support:
 naif@naif.io
