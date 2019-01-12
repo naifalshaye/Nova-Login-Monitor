@@ -1,9 +1,14 @@
 {
     "name": "naif/nova-login-monitor",
-    "description": "A Laravel Nova card.",
+    "description": "Monitor Nova Login via Slack notifications, Receive a notification every time someone's login to your system.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "monitor",
+        "login",
+        "auth",
+        "slack",
+        "notifications"
     ],
     "license": "MIT",
     "require": {
